@@ -6,7 +6,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
-  title: 'Food Menu — The Beatles Pub Yerevan',
+  title: 'Menu',
   description: 'Explore all eleven food menu pages from The Beatles Pub Yerevan.',
 }
 

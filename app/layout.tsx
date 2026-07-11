@@ -16,7 +16,10 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: 'The Beatles Pub Yerevan — Classic British Pub Since 2008',
+  title: {
+    default: 'Beatles Pub Yerevan',
+    template: 'Beatles Pub Yerevan %s',
+  },
   description:
     'The oldest pub in Yerevan. 300+ whiskeys, 20+ draught beers, classic British pub food, live rock concerts and pure Beatles vibes. 60 Pushkin St., Yerevan, Armenia.',
   generator: 'v0.app',

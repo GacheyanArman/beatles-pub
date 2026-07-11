@@ -10,7 +10,7 @@ import type { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Events — The Beatles Pub Yerevan',
+  title: 'Events',
   description: 'Upcoming concerts, celebrations, and pub news at The Beatles Pub Yerevan.',
 }
 
