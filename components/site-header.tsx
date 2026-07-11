@@ -5,11 +5,12 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '#about', label: 'Our Story' },
-  { href: '#menu', label: 'Food & Drinks' },
-  { href: '#hours', label: 'Hours' },
-  { href: '#events', label: 'Live Music' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'Our Story' },
+  { href: '/menu', label: 'Food Menu' },
+  { href: '/#hours', label: 'Hours' },
+  { href: '/#events', label: 'Live Music' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export function SiteHeader() {
@@ -30,7 +31,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-        <Link href="#top" className="font-display text-lg font-700 uppercase tracking-widest text-foreground">
+        <Link href="/#top" className="font-display text-lg font-700 uppercase tracking-widest text-foreground">
           The Beatles Pub
           <span className="ml-2 hidden text-accent sm:inline">Yerevan</span>
         </Link>
@@ -46,7 +47,7 @@ export function SiteHeader() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="bg-primary px-4 py-2 font-display text-sm uppercase tracking-wider text-primary-foreground transition-opacity hover:opacity-90"
           >
             Book a Table
@@ -80,7 +81,7 @@ export function SiteHeader() {
             ))}
             <li>
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="mt-4 block bg-primary px-4 py-3 text-center font-display text-base uppercase tracking-wider text-primary-foreground"
               >

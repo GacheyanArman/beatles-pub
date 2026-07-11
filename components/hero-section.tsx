@@ -4,7 +4,7 @@ export function HeroSection() {
   return (
     <section id="top" className="relative flex min-h-svh flex-col justify-end overflow-hidden">
       <Image
-        src="/images/facade-day.png"
+        src="/images/bg.jpg"
         alt="The red facade of The Beatles Pub on Pushkin Street, Yerevan"
         fill
         priority

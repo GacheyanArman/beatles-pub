@@ -1,55 +1,52 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { asc, eq } from 'drizzle-orm'
+import { db } from '@/lib/db'
+import { events } from '@/lib/db/schema'
 
-const events = [
-  { date: 'July 7', title: 'Peace & Love from Yerevan — Happy Birthday, Ringo!' },
-  { date: 'October 9', title: "John Lennon's Birthday — Live at the Upper Floor" },
-  { date: 'February 25', title: "George Harrison's Birthday with The Beertles" },
-  { date: 'March 11', title: 'Beatles Pub Anniversary Concert' },
-]
+export async function EventsSection() {
+  const publishedEvents = await db.select().from(events).where(eq(events.published, true)).orderBy(asc(events.eventDate))
+  const previewEvents = publishedEvents.slice(0, 3)
+  const hasMore = publishedEvents.length > 3
 
-export function EventsSection() {
   return (
     <section id="events" className="border-y border-border bg-card">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 md:px-6 md:py-28 lg:grid-cols-2">
-        <div className="relative order-2 aspect-[4/3] overflow-hidden lg:order-1">
-          <Image
-            src="/images/live-music.png"
-            alt="Live band playing under warm amber light at The Beatles Pub"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        </div>
+      <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+          <div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/live-music.png" alt="Live band performing at Beatles Pub" fill className="object-cover" sizes="(max-width:1024px) 100vw, 42vw" />
+            </div>
+          </div>
+          <div>
+            <p className="mb-3 font-display text-sm uppercase tracking-[0.3em] text-accent">Live Music &amp; News</p>
+            <h2 className="text-balance font-display text-4xl font-600 uppercase leading-tight tracking-tight text-foreground md:text-6xl">The band plays on</h2>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground/80">Concerts are occasional, but Beatles milestones always matter here. Follow this space for upcoming performances, celebrations, and pub news.</p>
 
-        <div className="order-1 lg:order-2">
-          <p className="mb-3 font-display text-sm uppercase tracking-[0.3em] text-accent">Live Music</p>
-          <h2 className="font-display text-4xl font-600 uppercase leading-tight tracking-tight text-foreground md:text-6xl text-balance">
-            The band plays on
-          </h2>
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-foreground/80 text-pretty">
-            We celebrate the Beatles&apos; milestones with live tribute concerts — especially the band members&apos;
-            birthdays. Our videos have been shared by Ringo Starr and the Beatles&apos; official pages.
-          </p>
+            {previewEvents.length ? (
+              <div className="mt-10 flex flex-col gap-6">
+                {previewEvents.map((event) => (
+                  <article key={event.id} className="grid gap-5 border-t border-border pt-6 sm:grid-cols-[9rem_1fr]">
+                    <div>
+                      <time className="font-display text-sm uppercase tracking-widest text-primary" dateTime={event.eventDate.toISOString()}>{event.eventDate.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</time>
+                    </div>
+                    <div><h3 className="font-display text-2xl uppercase tracking-wide text-foreground">{event.title}</h3><p className="mt-2 whitespace-pre-line leading-relaxed text-muted-foreground">{event.description}</p></div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-10 border-y border-border py-7"><p className="font-display text-xl uppercase tracking-wide text-foreground">No event announced right now</p><p className="mt-2 text-muted-foreground">New dates and pub news will appear here as soon as they are published.</p></div>
+            )}
 
-          <ul className="mt-8 divide-y divide-border border-y border-border">
-            {events.map((e) => (
-              <li key={e.title} className="flex items-baseline gap-6 py-4">
-                <span className="w-24 shrink-0 font-display text-sm uppercase tracking-widest text-primary">
-                  {e.date}
-                </span>
-                <span className="text-foreground/90">{e.title}</span>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href="https://www.instagram.com/beatlespubyerevan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block border border-foreground/40 px-6 py-3.5 font-display text-sm uppercase tracking-widest text-foreground transition-colors hover:border-accent hover:text-accent"
-          >
-            Follow for upcoming events
-          </a>
+            <div className="mt-8 flex flex-wrap gap-4">
+              {hasMore && (
+                <Link href="/events" className="border border-foreground/40 px-6 py-3.5 font-display text-sm uppercase tracking-widest text-foreground transition-colors hover:border-accent hover:text-accent">
+                  View all events
+                </Link>
+              )}
+              <a href="https://www.instagram.com/beatlespubyerevan/" target="_blank" rel="noopener noreferrer" className="border border-foreground/40 px-6 py-3.5 font-display text-sm uppercase tracking-widest text-foreground transition-colors hover:border-accent hover:text-accent">Follow on Instagram</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
