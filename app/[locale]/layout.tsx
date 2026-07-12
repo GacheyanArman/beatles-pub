@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Oswald, Lora } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -29,15 +29,30 @@ export const viewport: Viewport = {
   themeColor: '#1e1712',
 }
 
-export default function RootLayout({
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className={`bg-background ${oswald.variable} ${lora.variable}`}>
+    <html lang={locale} className={`bg-background ${oswald.variable} ${lora.variable}`}>
       <body className="antialiased font-sans">
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

@@ -1,15 +1,20 @@
-const items = [
-  '300+ Whiskeys',
-  '20+ Draught Beers',
-  '250+ Seats',
-  'Two Floors',
-  'Live Rock Concerts',
-  'British Cuisine',
-  'Since 2008',
-  'Featured by Ringo Starr',
-]
+'use client'
+
+import { useTranslations } from 'next-intl'
 
 export function TickerStrip() {
+  const t = useTranslations('Ticker')
+  const items = [
+    t('items.whiskies'),
+    t('items.draughtBeers'),
+    t('items.seats'),
+    t('items.twoFloors'),
+    t('items.liveRock'),
+    t('items.britishCuisine'),
+    t('items.since2008'),
+    t('items.ringoFeatured'),
+  ]
+
   return (
     <div className="overflow-hidden border-y border-border bg-primary py-3" aria-hidden="true">
       <div className="flex w-max animate-ticker gap-0">

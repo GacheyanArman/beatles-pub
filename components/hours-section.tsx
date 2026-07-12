@@ -1,27 +1,32 @@
-import Image from 'next/image'
+'use client'
 
-const floors = [
-  {
-    name: 'Upstairs',
-    tagline: 'Opened 2024 · brighter, high ceilings, lower volume',
-    rows: [
-      ['Opens', '12:00 every day'],
-      ['Closes', '00:00 (Sun–Thu)'],
-      ['Closes', '01:00 (Fri–Sat)'],
-    ],
-  },
-  {
-    name: 'Downstairs',
-    tagline: 'The original 2008 basement · classic pub vibe',
-    rows: [
-      ['Opens', '18:00 every day'],
-      ['Closes', '02:30 (Sun–Thu)'],
-      ['Closes', '03:30 (Fri–Sat)'],
-    ],
-  },
-]
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 export function HoursSection() {
+  const t = useTranslations('Hours')
+
+  const floors = [
+    {
+      name: t('floors.upstairs.name'),
+      tagline: t('floors.upstairs.tagline'),
+      rows: [
+        [t('rows.opens'), t('floors.upstairs.opens')],
+        [t('rows.closes'), t('floors.upstairs.closesSunThu')],
+        [t('rows.closes'), t('floors.upstairs.closesFriSat')],
+      ],
+    },
+    {
+      name: t('floors.downstairs.name'),
+      tagline: t('floors.downstairs.tagline'),
+      rows: [
+        [t('rows.opens'), t('floors.downstairs.opens')],
+        [t('rows.closes'), t('floors.downstairs.closesSunThu')],
+        [t('rows.closes'), t('floors.downstairs.closesFriSat')],
+      ],
+    },
+  ]
+
   return (
     <section id="hours" className="relative overflow-hidden">
       <Image
@@ -35,13 +40,12 @@ export function HoursSection() {
       <div className="absolute inset-0 bg-background/85" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
-        <p className="mb-3 font-display text-sm uppercase tracking-[0.3em] text-accent">Working Hours</p>
+        <p className="mb-3 font-display text-sm uppercase tracking-[0.3em] text-accent">{t('eyebrow')}</p>
         <h2 className="font-display text-4xl font-600 uppercase leading-tight tracking-tight text-foreground md:text-6xl text-balance">
-          Eight days a week
+          {t('title')}
         </h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-foreground/80 text-pretty">
-          Two floors, each with its own vibe. Start upstairs from noon, then move down when the night gets going. Last
-          order is always 30 minutes before closing.
+          {t('description')}
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">

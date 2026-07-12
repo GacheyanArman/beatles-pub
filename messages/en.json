@@ -1,0 +1,156 @@
+{
+  "Hero": {
+    "title": "The Beatles Pub",
+    "est": "Est. 2008 · 60 Pushkin St., Yerevan",
+    "description": "The oldest pub in Yerevan. Two floors of dark wood, warm light, classic rock — and everything the Beatles left us.",
+    "book": "Book a Table",
+    "menu": "Food & Drinks",
+    "imageAlt": "The red facade of The Beatles Pub on Pushkin Street, Yerevan"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "menu": "Menu",
+    "hours": "Hours",
+    "events": "Events",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "bookTable": "Book a Table",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu"
+  },
+  "About": {
+    "eyebrow": "Our Story",
+    "title": "One of Yerevan's oldest pubs",
+    "p1": "Founded in March 2008 in Yerevan, Beatles Pub began as a cozy underground spot with roughly 60 seats and a single bar. Today, it's widely considered one of the oldest—if not the oldest—pubs in Yerevan.",
+    "p2": "Over the years we expanded, and in April 2024 we opened an upper floor above the original basement. With two floors, we can now welcome more than 250 guests.",
+    "p3": "We now have two large bars—one on each floor—stocked with an extensive collection of whiskey, beer, and other drinks. We currently offer over 300 whiskeys, 20 draft beers, and more than 100 bottled beers. Altogether, the bar carries more than 1,000 varieties of drinks.",
+    "p4": "The upper floor opens at 12 pm and serves a classic pub menu, including Fish & Chips, Bangers & Mash, Scotch Eggs, ribs, burgers, sausages, and much more.",
+    "p5": "While we don't host live performances every night, we celebrate the Beatles' milestones—especially the band members' birthdays and memorial days. We've participated in seven Ringo Starr birthday events and have been featured several times by the Beatles' official page and Ringo Starr's official page.",
+    "p6": "The pub is often busy, even on weekdays, so we recommend booking in advance to secure a seat. Bar reservations are welcome as well. The preferred way to book is by sending a DM to our Instagram or Facebook pages, though you can also call the numbers listed on the contacts page.",
+    "p7": "You can read more about booking, smoking, and opening times in our <faq>FAQ below</faq>.",
+    "stats": {
+      "founded": "Founded in Yerevan",
+      "guests": "Guests on two floors",
+      "whiskies": "Whiskeys",
+      "drinks": "Varieties of drinks"
+    },
+    "images": {
+      "oldPub": "The original downstairs Beatles Pub bar",
+      "upperFloor": "The upper floor bar opened in 2024",
+      "food": "Classic pub food served upstairs"
+    }
+  },
+  "MenuSection": {
+    "eyebrow": "Food Menu",
+    "title": "A taste of our menu",
+    "description": "Explore three featured menu pages here, then open the full menu to see all eleven pages.",
+    "viewAll": "View all 11 menu pages",
+    "tapToView": "Tap to view",
+    "galleryButton": "Open menu page {number}"
+  },
+  "EventsSection": {
+    "imageAlt": "Live band performing at Beatles Pub",
+    "eyebrow": "Live Music & News",
+    "title": "The band plays on",
+    "description": "Concerts are occasional, but Beatles milestones always matter here. Follow this space for upcoming performances, celebrations, and pub news.",
+    "noEventsTitle": "No event announced right now",
+    "noEventsDescription": "New dates and pub news will appear here as soon as they are published.",
+    "viewAllEvents": "View all events",
+    "followInstagram": "Follow on Instagram"
+  },
+  "Ticker": {
+    "items": {
+      "whiskies": "300+ Whiskeys",
+      "draughtBeers": "20+ Draught Beers",
+      "seats": "250+ Seats",
+      "twoFloors": "Two Floors",
+      "liveRock": "Live Rock Concerts",
+      "britishCuisine": "British Cuisine",
+      "since2008": "Since 2008",
+      "ringoFeatured": "Featured by Ringo Starr"
+    }
+  },
+  "Hours": {
+    "eyebrow": "Working Hours",
+    "title": "Eight days a week",
+    "description": "Two floors, each with its own vibe. Start upstairs from noon, then move down when the night gets going. Last order is always 30 minutes before closing.",
+    "rows": {
+      "opens": "Opens",
+      "closes": "Closes"
+    },
+    "floors": {
+      "upstairs": {
+        "name": "Upstairs",
+        "tagline": "Opened 2024 · brighter, high ceilings, lower volume",
+        "opens": "12:00 every day",
+        "closesSunThu": "00:00 (Sun–Thu)",
+        "closesFriSat": "01:00 (Fri–Sat)"
+      },
+      "downstairs": {
+        "name": "Downstairs",
+        "tagline": "The original 2008 basement · classic pub vibe",
+        "opens": "18:00 every day",
+        "closesSunThu": "02:30 (Sun–Thu)",
+        "closesFriSat": "03:30 (Fri–Sat)"
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Come Together",
+    "title": "Book your table",
+    "description": "The pub is often busy, even on weekdays — we recommend booking in advance. The fastest way to reach us is a DM on Instagram or Facebook.",
+    "instagram": "Book via Instagram",
+    "facebook": "Book via Facebook",
+    "cardTitle": "Contact Us",
+    "addressLabel": "Address",
+    "addressValue": "60 Pushkin St., Yerevan 0002, Armenia",
+    "phonesLabel": "Phones",
+    "phoneMain": "(010) 522-023",
+    "phoneSecondary": "(041) 522-023 · 12:00 – 18:00",
+    "emailLabel": "Email"
+  },
+  "Faq": {
+    "eyebrow": "Good to know",
+    "title": "Frequently asked questions",
+    "items": {
+      "q1": "What are your working hours?",
+      "a1": "Upstairs opens at 12:00 daily and closes at 00:00 Sun–Thu or 01:00 Fri–Sat. Downstairs opens at 18:00 and closes at 02:30 Sun–Thu or 03:30 Fri–Sat. Last order is 30 minutes before closing.",
+      "q2": "What’s the difference between the two floors?",
+      "a2": "Upstairs opened in 2024, with high ceilings, brighter lighting, slightly lower volume, and a new wooden interior. Downstairs is the original 2008 pub: later hours, louder music, dimmer lighting, and a classic pub atmosphere.",
+      "q3": "Which floor do you recommend for first-time visitors?",
+      "a3": "We suggest starting upstairs for the brighter ambiance. You are welcome to move between floors, and when upstairs closes you can continue downstairs.",
+      "q4": "Can I move between floors?",
+      "a4": "Yes. You can go up or down anytime, including moving downstairs when the upper floor closes.",
+      "q5": "Are menu items and prices the same on both floors?",
+      "a5": "Almost identical. Only a few local Armenian bottled beers are not served upstairs.",
+      "q6": "Is smoking allowed?",
+      "a6": "We are a non-smoking venue, but dedicated smoking areas are available.",
+      "q7": "Where can I smoke?",
+      "a7": "Upstairs has a special open-air area where you may take your drink. You can also smoke near the main entrance, but drinks must stay inside there.",
+      "q8": "How many restrooms do you have?",
+      "a8": "There are three restrooms downstairs and two upstairs. All are unisex.",
+      "q9": "Can I reserve a seat at the bar?",
+      "a9": "Yes. Bar spots can be reserved in advance.",
+      "q10": "What is the best way to contact you?",
+      "a10": "Instagram or Facebook messaging is the fastest and preferred way to reach us.",
+      "q11": "When should I make a reservation?",
+      "a11": "We recommend booking online between 12:00 and 18:00. For Fridays and Saturdays, please book 3–4 days in advance.",
+      "q12": "Are phone numbers available?",
+      "a12": "Yes: 041 522-023 from 12:00–18:00 and 010 522-023 after 18:00.",
+      "q13": "Do you host live performances?",
+      "a13": "As of 2025, live performances are occasional—usually no more than one concert a month, often on Beatles band members’ birthdays."
+    }
+  },
+  "Footer": {
+    "brand": "The Beatles Pub",
+    "city": "Yerevan",
+    "details": "60 Pushkin St., Yerevan 0002, Armenia · (010) 522-023 · info@beatles.am",
+    "quote": "\"And in the end, the love you take is equal to the love you make.\"",
+    "copyright": "© {year} The Beatles Pub Yerevan. All rights reserved."
+  },
+  "MenuLightbox": {
+    "swipe": "← Swipe to navigate →",
+    "close": "Close"
+  }
+}

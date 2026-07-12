@@ -1,15 +1,17 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
 import { MenuLightbox } from '@/components/menu-lightbox'
 
 const ALL_MENU_IMAGES = Array.from({ length: 11 }, (_, i) => `/images/${i + 1}.webp`)
 
 export function MenuGallery({ images = ALL_MENU_IMAGES }: { images?: string[] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const t = useTranslations('MenuSection')
 
   return (
     <>
@@ -30,7 +32,7 @@ export function MenuGallery({ images = ALL_MENU_IMAGES }: { images?: string[] })
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/30">
                 <span className="translate-y-2 font-display text-sm uppercase tracking-wider text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  Tap to view
+                  {t('tapToView')}
                 </span>
               </div>
             </button>
@@ -51,16 +53,17 @@ export function MenuGallery({ images = ALL_MENU_IMAGES }: { images?: string[] })
 
 export function MenuSection() {
   const previewImages = ALL_MENU_IMAGES.slice(0, 3)
+  const t = useTranslations('MenuSection')
 
   return (
     <section id="menu" className="border-y border-border bg-card">
       <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-3 font-display text-sm uppercase tracking-[0.3em] text-accent">Food Menu</p>
-            <h2 className="text-balance font-display text-4xl font-600 uppercase leading-tight tracking-tight text-foreground md:text-6xl">A taste of our menu</h2>
+            <p className="mb-3 font-display text-sm uppercase tracking-[0.3em] text-accent">{t('eyebrow')}</p>
+            <h2 className="text-balance font-display text-4xl font-600 uppercase leading-tight tracking-tight text-foreground md:text-6xl">{t('title')}</h2>
           </div>
-          <p className="max-w-sm text-pretty text-lg leading-relaxed text-muted-foreground">Explore three featured menu pages here, then open the full menu to see all eleven pages.</p>
+          <p className="max-w-sm text-pretty text-lg leading-relaxed text-muted-foreground">{t('description')}</p>
         </div>
 
         <div className="mt-12">
@@ -68,7 +71,7 @@ export function MenuSection() {
         </div>
 
         <Link href="/menu" className="mt-8 inline-flex items-center gap-2 bg-primary px-5 py-3 font-display text-sm uppercase tracking-wider text-primary-foreground transition-opacity hover:opacity-90">
-          View all 11 menu pages
+          {t('viewAll')}
           <ArrowRight className="size-4" aria-hidden="true" />
         </Link>
       </div>

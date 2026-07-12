@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 interface MenuLightboxProps {
   images: string[]
@@ -11,6 +12,7 @@ interface MenuLightboxProps {
 }
 
 export function MenuLightbox({ images, initialIndex, onClose }: MenuLightboxProps) {
+  const t = useTranslations('MenuLightbox')
   const [index, setIndex] = useState(initialIndex)
   const [scale, setScale] = useState(1)
   const touchStart = useRef<{ x: number; y: number; time: number } | null>(null)
@@ -133,7 +135,7 @@ export function MenuLightbox({ images, initialIndex, onClose }: MenuLightboxProp
 
       {/* Mobile swipe hint */}
       <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/40 md:hidden">
-        ← Свайп для навигации →
+        {t('swipe')}
       </p>
     </div>
   )
